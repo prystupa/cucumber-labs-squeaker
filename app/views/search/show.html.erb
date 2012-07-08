@@ -1,0 +1,11 @@
+<form action="/search">
+  <fieldset>
+    <input type="text" name="query" />
+    <input type="submit" value="Search" />
+  </fieldset>
+  <ol class='results'>
+    <% @messages.each do |message| %>
+    <li><%= link_to(message.content, [message.user, message]) %></li>
+    <% end %>
+  </ol>
+</form>
